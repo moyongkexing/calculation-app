@@ -1,1 +1,0 @@
-console.log('typescript - lite-server');
