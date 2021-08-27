@@ -88,12 +88,15 @@ new Vue({
     },
 
     // 以下、ディスプレイ画面のフォントサイズをいい感じに調整する処理
+    // 入力ラインの幅が画面からはみ出す場合、trueを返す
     isDisplaySizeFull: function() {
       const targetWidth = document.getElementById("inputLine").offsetWidth;
       const displayWidth = this.displayStyle.width - this.displayStyle.padding * 3;
       return targetWidth > displayWidth;
     },
 
+    // 入力ラインの幅が画面からはみ出す場合、フォントサイズを1小さくする
+    // はみ出さない場合、初期サイズを超えない範囲内でフォントサイズを1大きくする
     adjustFontSize: function() {
       if(this.isDisplaySizeFull()) this.displayStyle.inputFontSize--;
       else if(this.displayStyle.inputFontSize < this.displayStyle.initialInputFontSize) {
