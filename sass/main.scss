@@ -124,6 +124,10 @@ body {
       font-size: 19px;
       grid-area: btnEnter;
     }
+    .btnDisable {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
   }
 }
 

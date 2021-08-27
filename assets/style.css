@@ -118,5 +118,9 @@ body {
   font-size: 19px;
   grid-area: btnEnter;
 }
+#app .inputContainer .btnDisable {
+  pointer-events: none;
+  cursor: not-allowed;
+}
 
 /*# sourceMappingURL=style.css.map */

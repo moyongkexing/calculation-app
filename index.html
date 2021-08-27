@@ -44,7 +44,7 @@
         v-for="num in numericBtns"
         :key="num"
         v-on:click="addOperand(num)"
-        v-bind:class="['btn', 'btn' + num, isInputError && num === '0' ? 'btnError' : '']"
+        v-bind:class="['btn', 'btn' + num, isInputLineBlank && num === '0' ? 'btnDisable' : '']"
       >
         {{ num }}
       </span>
@@ -52,14 +52,14 @@
         v-for="operator in operatorBtns"
         :key="operator.name"
         v-on:click="addOperator(operator.value)"
-        v-bind:class="['btn', 'operatorBtn', 'btn' + operator.name]"
+        v-bind:class="['btn', 'operatorBtn', 'btn' + operator.name, isInputLineBlank ? 'btnDisable' : '' ]"
       >
         {{ operator.value }}
       </span>
-      <span class="btn btnBack" v-on:click="deleteOne">
+      <span v-bind:class="['btn', 'btnBack', isInputLineBlank ? 'btnDisable' : '']" v-on:click="deleteOne">
         <i class="fas fa-backspace"></i>
       </span>
-      <span class="btn btnAC" v-on:click="deleteAll">
+      <span v-bind:class="['btn', 'btnAC', isInputLineBlank ? 'btnDisable' : '']" v-on:click="deleteAll">
         AC
       </span>
     </section>
