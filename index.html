@@ -4,20 +4,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./app.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Gruppo" rel="stylesheet">
   <link rel="stylesheet" href="assets/reset.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <title>Calculation App</title>
 </head>
-<body class="h-screen flex flex-col items-center bg-blue-100">
-  <a class="font-bold mt-16 mb-5 tracking-tight font-mono underline" target="_blank" rel="noopener noreferrer" href="https://github.com/moyongkexing/rpg-character-maker">CODE</a>
-  <div class="bg-blue-300 w-2/3 lg:w-1/2">test</div>
-  <section >
-    <p v-model="displayText"></p>
-  </section>
-  <section>
-    
-  </section>
+<body class="h-screen flex flex-col items-center justify-start">
+  <a
+    class="font-bold mt-16 mb-5 tracking-tight font-mono underline"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://github.com/moyongkexing/rpg-character-maker">
+    CODE
+  </a>
+  <div id="app">
+    <section 
+      class="displayContainer"
+      v-bind:style="{width: displayStyle.width + 'px', padding: displayStyle.padding + 'px'}"
+    >
+      <p
+        id="inputLine"
+        class="inputLine"
+        v-bind:style="{fontSize: displayStyle.inputFontSize + 'px'}">
+          {{ inputLineStr }}
+      </p>
+      <p
+        v-if="!isOutputLineBlank"
+        class="outputLine"
+      >
+         {{ outputLine }}
+      </p>
+    </section>
+    <section class="inputContainer">
+      <span 
+        v-for="num in numericBtns"
+        :key="num"
+        v-on:click="addOperand(num)"
+        v-bind:class="['btn', 'btn' + num, isInputError && num === '0' ? 'btnError' : '']"
+      >
+        {{ num }}
+      </span>
+      <span 
+        v-for="operator in operatorBtns"
+        :key="operator.name"
+        v-on:click="addOperator(operator.value)"
+        v-bind:class="['btn', 'operatorBtn', 'btn' + operator.name]"
+      >
+        {{ operator.value }}
+      </span>
+      <span class="btn btnBack" v-on:click="deleteOne">
+        <i class="fas fa-backspace"></i>
+      </span>
+      <span class="btn btnAC" v-on:click="deleteAll">
+        AC
+      </span>
+    </section>
+  </div>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
