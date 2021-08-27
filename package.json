@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "sass": "^1.38.1"
+  },
+  "scripts": {
+    "compile:sass": "sass sass/main.scss assets/style.css -w"
   }
 }

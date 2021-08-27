@@ -1,0 +1,131 @@
+* {
+  user-select: none;
+}
+body {
+  background: #F0F3F6;
+
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  background: #F0F3F6;
+  box-shadow:  5px 5px 4px #dfe2e5,
+               -5px -5px 4px #ffffff;
+  .displayContainer {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 150px;
+    font-family: "Gruppo";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 14px;
+    background: #F0F3F6;
+    transition: all 2s;
+    box-shadow: inset 5px 5px 24px #ced1d4,
+                inset -5px -5px 24px #ffffff;
+    .inputLine {
+      text-align: right;
+    }
+    .outputLine {
+      font-size: 27px;
+      font-weight: bold;
+    }
+  }
+
+  .inputContainer {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    gap: 10px;
+    grid-template-rows: repeat(4, 50px);
+    grid-template-areas:
+      "btn7 btn8 btn9 btnDiv"
+      "btn4 btn5 btn6 btnMul"
+      "btn1 btn2 btn3 btnSub"
+      "btnAC btn0 btnEnter btnAdd";
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Gruppo";
+      font-size: 24px;
+      color: #1e1e1e;
+      cursor: pointer;
+      border-radius: 4px;
+      background: #F0F3F6;
+      box-shadow:  5px 5px 4px #dfe2e5,
+                   -5px -5px 4px #ffffff;
+    }
+    .operatorBtn {
+      position: relative;
+      color: white;
+      font-size: 30px;
+      background: #303030
+    }
+    .btnError {
+      color: white;
+      background: #f04747;
+      box-shadow: inset 5px 5px 10px #c03939,
+                  inset -5px -5px 10px #ff5555;
+    }
+    .btn0 {
+      grid-area: btn0;
+    }
+    .btn1 {
+      grid-area: btn1;
+    }
+    .btn2 {
+      grid-area: btn2;
+    }
+    .btn3 {
+      grid-area: btn3;
+    }
+    .btn4 {
+      grid-area: btn4;
+    }
+    .btn5 {
+      grid-area: btn5;
+    }
+    .btn6 {
+      grid-area: btn6;
+    }
+    .btn7 {
+      grid-area: btn7;
+    }
+    .btn8 {
+      grid-area: btn8;
+    }
+    .btn9 {
+      grid-area: btn9;
+    }
+    .btnAdd {
+      grid-area: btnAdd;
+    }
+    .btnSub {
+      grid-area: btnSub;
+    }
+    .btnMul {
+      grid-area: btnMul;
+    }
+    .btnDiv {
+      grid-area: btnDiv;
+    }
+    .btnAC {
+      font-size: 20px;
+      grid-area: btnAC;
+    }
+    .btnBack {
+      font-size: 19px;
+      grid-area: btnEnter;
+    }
+  }
+}
+
+
+

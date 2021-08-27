@@ -1,0 +1,122 @@
+* {
+  user-select: none;
+}
+
+body {
+  background: #F0F3F6;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  background: #F0F3F6;
+  box-shadow: 5px 5px 4px #dfe2e5, -5px -5px 4px #ffffff;
+}
+#app .displayContainer {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  height: 150px;
+  font-family: "Gruppo";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 14px;
+  background: #F0F3F6;
+  transition: all 2s;
+  box-shadow: inset 5px 5px 24px #ced1d4, inset -5px -5px 24px #ffffff;
+}
+#app .displayContainer .inputLine {
+  text-align: right;
+}
+#app .displayContainer .outputLine {
+  font-size: 27px;
+  font-weight: bold;
+}
+#app .inputContainer {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  gap: 10px;
+  grid-template-rows: repeat(4, 50px);
+  grid-template-areas: "btn7 btn8 btn9 btnDiv" "btn4 btn5 btn6 btnMul" "btn1 btn2 btn3 btnSub" "btnAC btn0 btnEnter btnAdd";
+}
+#app .inputContainer .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gruppo";
+  font-size: 24px;
+  color: #1e1e1e;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #F0F3F6;
+  box-shadow: 5px 5px 4px #dfe2e5, -5px -5px 4px #ffffff;
+}
+#app .inputContainer .operatorBtn {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  background: #303030;
+}
+#app .inputContainer .btnError {
+  color: white;
+  background: #f04747;
+  box-shadow: inset 5px 5px 10px #c03939, inset -5px -5px 10px #ff5555;
+}
+#app .inputContainer .btn0 {
+  grid-area: btn0;
+}
+#app .inputContainer .btn1 {
+  grid-area: btn1;
+}
+#app .inputContainer .btn2 {
+  grid-area: btn2;
+}
+#app .inputContainer .btn3 {
+  grid-area: btn3;
+}
+#app .inputContainer .btn4 {
+  grid-area: btn4;
+}
+#app .inputContainer .btn5 {
+  grid-area: btn5;
+}
+#app .inputContainer .btn6 {
+  grid-area: btn6;
+}
+#app .inputContainer .btn7 {
+  grid-area: btn7;
+}
+#app .inputContainer .btn8 {
+  grid-area: btn8;
+}
+#app .inputContainer .btn9 {
+  grid-area: btn9;
+}
+#app .inputContainer .btnAdd {
+  grid-area: btnAdd;
+}
+#app .inputContainer .btnSub {
+  grid-area: btnSub;
+}
+#app .inputContainer .btnMul {
+  grid-area: btnMul;
+}
+#app .inputContainer .btnDiv {
+  grid-area: btnDiv;
+}
+#app .inputContainer .btnAC {
+  font-size: 20px;
+  grid-area: btnAC;
+}
+#app .inputContainer .btnBack {
+  font-size: 19px;
+  grid-area: btnEnter;
+}
+
+/*# sourceMappingURL=style.css.map */
